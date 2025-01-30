@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Axe
+  - ThrowingObject
+  - Sword
   layers:
   - Default
   - TransparentFX
