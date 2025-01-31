@@ -9,6 +9,7 @@ public class LevelSecondLogicScript : MonoBehaviour
     public bool sendOn = false;
     public List<GameObject> answerTexts;
     [SerializeField] private TextMeshPro equationText;
+    [SerializeField] private GameObject startLevel;
 
     public void StartGame()
     {
@@ -21,11 +22,12 @@ public class LevelSecondLogicScript : MonoBehaviour
         counter--;
         if (counter <= 0)
         {
-            equationText.text = "To DooDoolet Khordan Dare o========D";
+            equationText.text = "You Win";
             for (int i = 0; i < answerTexts.Count; i++)
             {
-                answerTexts[i].GetComponent<LevelSecondTargerScript>().targetText.text = "YAM";
+                answerTexts[i].GetComponent<LevelSecondTargerScript>().targetText.text = "";
                 answerTexts[i].GetComponent<LevelSecondTargerScript>().isCorrectAnswer = false;
+                startLevel.SetActive(true);
             }
             return;
         }
