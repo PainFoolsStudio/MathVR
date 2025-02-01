@@ -7,12 +7,30 @@ public class LevelOneLogicScript : MonoBehaviour
     public int rounds = 3;
     public int counter;
     [SerializeField] private TextMeshPro equationText;
+    private bool gameStarted;
+    [SerializeField] private GameObject startLevel;
     [SerializeField] private List<GameObject> answerTexts;
+    [SerializeField] private GameObject equipment;
+    public GameObject axePrefab;
+    public  bool IsGameStarted()
+    {
+        return gameStarted;
+    }
+
+    public void CreateAxe()
+    {
+        var currentEquipment = Instantiate(axePrefab, equipment.transform.position, equipment.transform.rotation);
+        Destroy(equipment);
+        equipment = currentEquipment;
+    }
 
     public void StartGame()
     {
         counter = rounds;
         SetEquation();
+        gameStarted = true;
+        CreateAxe();
+
     }
 
     public void SetEquation()
@@ -20,11 +38,14 @@ public class LevelOneLogicScript : MonoBehaviour
         counter--;
         if (counter <= 0)
         {
-            equationText.text = "To DooDoolet Khordan Dare o========D";
+            equationText.text = "You win";
+            CreateAxe();
+            gameStarted = false;
             for (int i = 0; i < answerTexts.Count; i++)
             {
-                answerTexts[i].GetComponent<LevelOneTargerScript>().targetText.text = "YAM";
+                answerTexts[i].GetComponent<LevelOneTargerScript>().targetText.text = "";
                 answerTexts[i].GetComponent<LevelOneTargerScript>().isCorrectAnswer = false;
+                startLevel.SetActive(true);
             }
             return;
         }
@@ -34,7 +55,7 @@ public class LevelOneLogicScript : MonoBehaviour
         );
         if (equationText != null)
         {
-            equationText.text = $"Solve: {equation}";
+            equationText.text = $"{equation}";
         }
         for (int i = 0; i < answers.Count; i++)
         {
@@ -48,7 +69,7 @@ public class LevelOneLogicScript : MonoBehaviour
                 }
             }
         }
-        Debug.Log($"Equation: {equation} = {correctAnswer}  |  Answers: {string.Join(", ", answers)}");
+        //Debug.Log($"Equation: {equation} = {correctAnswer}  |  Answers: {string.Join(", ", answers)}");
 
     }
 }
