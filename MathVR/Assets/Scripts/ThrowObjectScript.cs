@@ -14,7 +14,6 @@ public class ThrowObjectScript : MonoBehaviour
     [Header("Throw Settings")]
     public GameObject[] Points;
     public float throwInterval = 0.1f;
-    private float throwTimer;
 
     void Start()
     {
@@ -34,8 +33,6 @@ public class ThrowObjectScript : MonoBehaviour
             //throwTimer += Time.deltaTime;
             //if (throwTimer >= throwInterval)
             //{
-                ThrowProjectiles();
-                throwTimer = 0f;
             //}
             gameObject.GetComponent<LevelSecondLogicScript>().sendOn = false;
         }
