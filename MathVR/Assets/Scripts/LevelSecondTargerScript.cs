@@ -7,6 +7,8 @@ public class LevelSecondTargerScript : MonoBehaviour
     public TextMeshPro targetText;
     public bool isCorrectAnswer = false;
     public LevelSecondLogicScript levelSecondLogicScript;
+    public GameObject cutBarrelPrefab;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Sword")
@@ -15,6 +17,7 @@ public class LevelSecondTargerScript : MonoBehaviour
             {
                 levelSecondLogicScript.counter = levelSecondLogicScript.rounds;
             }
+            Instantiate(cutBarrelPrefab, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

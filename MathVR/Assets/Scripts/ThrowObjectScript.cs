@@ -33,6 +33,7 @@ public class ThrowObjectScript : MonoBehaviour
             //throwTimer += Time.deltaTime;
             //if (throwTimer >= throwInterval)
             //{
+                ThrowProjectiles();
             //}
             gameObject.GetComponent<LevelSecondLogicScript>().sendOn = false;
         }

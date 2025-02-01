@@ -204,6 +204,7 @@ MonoBehaviour:
   targetText: {fileID: 3090029830391712597}
   isCorrectAnswer: 0
   levelSecondLogicScript: {fileID: 0}
+  cutBarrelPrefab: {fileID: 2564948806084362447, guid: fd1304774f6080141b17ef440442908e, type: 3}
 --- !u!1 &2212299002693653094
 GameObject:
   m_ObjectHideFlags: 0

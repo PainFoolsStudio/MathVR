@@ -50,7 +50,6 @@ public class LevelThreeLogicScript : MonoBehaviour
         {
             answerTexts[i].targetText.text = answers[i].ToString();
             answerTexts[i].isCorrectAnswer = false;
-            print(correctAnswer.Contains(answers[i]));
             if (correctAnswer.Contains(answers[i]))
             {
                 answerTexts[i].isCorrectAnswer = true;
