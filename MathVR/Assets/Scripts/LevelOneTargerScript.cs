@@ -9,7 +9,7 @@ public class LevelOneTargerScript : MonoBehaviour
     public TextMeshPro targetText;
     public bool isCorrectAnswer = false;
     public LevelOneLogicScript levelOneLogicScript;
-    [SerializeField]private GameObject vfx;
+    [SerializeField] private GameObject vfx;
     private ParticleSystem vfxParticleSystem;
     private AudioSource audioSource;
     private void Start()

@@ -22,12 +22,13 @@ public class LevelSecondLogicScript : MonoBehaviour
         counter--;
         if (counter <= 0)
         {
-            equationText.text = "You Win";
+            print("Done");
+            equationText.text = "You Won";
+            startLevel.SetActive(true);
             for (int i = 0; i < answerTexts.Count; i++)
             {
                 answerTexts[i].GetComponent<LevelSecondTargerScript>().targetText.text = "";
                 answerTexts[i].GetComponent<LevelSecondTargerScript>().isCorrectAnswer = false;
-                startLevel.SetActive(true);
             }
             return;
         }

@@ -12,7 +12,7 @@ public class LevelOneLogicScript : MonoBehaviour
     [SerializeField] private List<GameObject> answerTexts;
     [SerializeField] private GameObject equipment;
     public GameObject axePrefab;
-    public  bool IsGameStarted()
+    public bool IsGameStarted()
     {
         return gameStarted;
     }
@@ -26,6 +26,7 @@ public class LevelOneLogicScript : MonoBehaviour
 
     public void StartGame()
     {
+        transform.GetComponent<AudioSource>().Play();
         counter = rounds;
         SetEquation();
         gameStarted = true;
@@ -38,7 +39,7 @@ public class LevelOneLogicScript : MonoBehaviour
         counter--;
         if (counter <= 0)
         {
-            equationText.text = "You win";
+            equationText.text = "You won";
             CreateAxe();
             gameStarted = false;
             for (int i = 0; i < answerTexts.Count; i++)

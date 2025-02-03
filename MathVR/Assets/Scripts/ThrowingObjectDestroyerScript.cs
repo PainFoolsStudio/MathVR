@@ -9,9 +9,9 @@ public class ThrowingObjectDestroyerScript : MonoBehaviour
         {
             if (other.GetComponent<LevelSecondTargerScript>().isCorrectAnswer)
             {
-                levelSecondLogicScript.counter = 0;
+                levelSecondLogicScript.counter = levelSecondLogicScript.rounds;
+                levelSecondLogicScript.sendOn = true;
             }
-            levelSecondLogicScript.sendOn = true;
             Destroy(other.gameObject);
         }
     }
