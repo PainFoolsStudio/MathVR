@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class LevelSecondLogicScript : MonoBehaviour
 {
@@ -9,8 +10,25 @@ public class LevelSecondLogicScript : MonoBehaviour
     public bool sendOn = false;
     public List<GameObject> answerTexts;
     [SerializeField] private TextMeshPro equationText;
+    [SerializeField] private TextMeshPro stat;
     [SerializeField] private GameObject startLevel;
+    public GameObject database;
 
+    private void Start()
+    {
+        SetStat();
+    }
+    private void SetStat()
+    {
+        if (database.GetComponent<DataBaseScript>().levelTwoTotalEquations > 0)
+        {
+            stat.text = "Accuracy: " + ((database.GetComponent<DataBaseScript>().levelTwoCorrectAnswer / database.GetComponent<DataBaseScript>().levelTwoTotalEquations) * 100).ToString();
+        }
+        else
+        {
+            stat.text = "Check This Out";
+        }
+    }
     public void StartGame()
     {
         counter = rounds;
@@ -22,8 +40,8 @@ public class LevelSecondLogicScript : MonoBehaviour
         counter--;
         if (counter <= 0)
         {
-            print("Done");
             equationText.text = "You Won";
+            SetStat();
             startLevel.SetActive(true);
             for (int i = 0; i < answerTexts.Count; i++)
             {
@@ -32,6 +50,7 @@ public class LevelSecondLogicScript : MonoBehaviour
             }
             return;
         }
+        database.GetComponent<DataBaseScript>().levelTwoTotalEquations++;
         var (equation, correctAnswer, answers) = MathGenerator.GenerateEquation(
             MathGenerator.Difficulty.Normal,
             numOfChoices: 2
@@ -52,7 +71,6 @@ public class LevelSecondLogicScript : MonoBehaviour
                 }
             }
         }
-        Debug.Log($"Equation: {equation} = {correctAnswer}  |  Answers: {string.Join(", ", answers)}");
 
     }
 }

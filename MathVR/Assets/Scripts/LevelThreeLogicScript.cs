@@ -1,15 +1,33 @@
-using UnityEngine;
-using TMPro;
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
 
 public class LevelThreeLogicScript : MonoBehaviour
 {
     public int rounds = 3;
     public int counter;
+    [SerializeField] private GameObject startLevel;
+    [SerializeField] private GameObject database;
     [SerializeField] private TextMeshPro equationText;
+    [SerializeField] private TextMeshPro stat;
     [SerializeField] private List<LevelThreeTargetScript> answerTexts;
 
+    private void Start()
+    {
+        SetStat();
+    }
+    private void SetStat()
+    {
+        if (database.GetComponent<DataBaseScript>().levelThreeTotalEquations > 0)
+        {
+            stat.text = "Accuracy: " + ((database.GetComponent<DataBaseScript>().levelThreeCorrectAnswer / database.GetComponent<DataBaseScript>().levelThreeTotalEquations) * 100).ToString();
+        }
+        else
+        {
+            stat.text = "Check this out";
+        }
+    }
     public void StartGame()
     {
         counter = rounds;
@@ -26,17 +44,23 @@ public class LevelThreeLogicScript : MonoBehaviour
         for (int i = 0; i < answerTexts.Count; i++)
         {
             answerTexts[i].gameObject.SetActive(true);
+            answerTexts[i].particle.gameObject.SetActive(false);
         }
         if (counter <= 0)
         {
-            equationText.text = "To DooDoolet Khordan Dare o========D";
+            equationText.text = "You Won";
+            SetStat();
+            startLevel.SetActive(true);
+
             for (int i = 0; i < answerTexts.Count; i++)
             {
-                answerTexts[i].targetText.text = "YAM";
+                answerTexts[i].targetText.text = "O";
                 answerTexts[i].isCorrectAnswer = false;
             }
             return;
         }
+        database.GetComponent<DataBaseScript>().levelThreeTotalEquations++;
+        database.GetComponent<DataBaseScript>().levelThreeCorrectAnswer++;
         for (int j = 0; j < answerTexts.Count; j++)
         {
             answerTexts[j].gameObject.GetComponent<Collider>().enabled = true;
@@ -53,27 +77,29 @@ public class LevelThreeLogicScript : MonoBehaviour
             if (correctAnswer.Contains(answers[i]))
             {
                 answerTexts[i].isCorrectAnswer = true;
-                print("Correct:" + answers[i]);
             }
         }
-        Debug.Log($"Equation: {equation} =  {string.Join(", ", correctAnswer)}  |  Answers: {string.Join(", ", answers)}");
     }
     public void CheckAnswers()
     {
         bool isEnd = true;
         for (int i = 0; i < answerTexts.Count; i++)
         {
+            if (answerTexts[i].targetText.text == "O")
+            {
+                return;
+            }
             if (!answerTexts[i].gameObject.activeSelf)
             {
                 if (!answerTexts[i].isCorrectAnswer)
                 {
                     counter = rounds;
-                    // Add Material
                     for (int j = 0; j < answerTexts.Count; j++)
                     {
                         answerTexts[j].gameObject.GetComponent<Collider>().enabled = false;
                         answerTexts[j].targetText.text = "X";
                     }
+                    database.GetComponent<DataBaseScript>().levelThreeCorrectAnswer--;
                     StartCoroutine(WaitAndSetEquation());
                 }
             }

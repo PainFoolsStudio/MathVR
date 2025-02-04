@@ -1,8 +1,5 @@
-using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Audio;
-using static UnityEngine.GraphicsBuffer;
 
 public class LevelOneTargerScript : MonoBehaviour
 {
@@ -25,15 +22,19 @@ public class LevelOneTargerScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Axe")
         {
+            Destroy(collision.gameObject);
             if (!isCorrectAnswer && levelOneLogicScript.IsGameStarted())
             {
                 levelOneLogicScript.counter = levelOneLogicScript.rounds;
                 levelOneLogicScript.CreateAxe();
             }
+            if (isCorrectAnswer)
+            {
+                levelOneLogicScript.database.GetComponent<DataBaseScript>().levelOneCorrectAnswer++;
+            }
             audioSource.Play();
             vfx.SetActive(true);
             vfxParticleSystem.Play();
-            Destroy(collision.gameObject);
             levelOneLogicScript.SetEquation();
         }
     }

@@ -205,6 +205,8 @@ MonoBehaviour:
   isCorrectAnswer: 0
   levelSecondLogicScript: {fileID: 0}
   cutBarrelPrefab: {fileID: 2564948806084362447, guid: fd1304774f6080141b17ef440442908e, type: 3}
+  audioClipExplosion: {fileID: 8300000, guid: b285db10e502c9f4987ac0711997f271, type: 3}
+  audioClipSmoke: {fileID: 8300000, guid: ff3cd64b12d252a4ebb216b545b31a8a, type: 3}
 --- !u!1 &2212299002693653094
 GameObject:
   m_ObjectHideFlags: 0

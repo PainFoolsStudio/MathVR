@@ -9,9 +9,15 @@ public class LevelOneLogicScript : MonoBehaviour
     [SerializeField] private TextMeshPro equationText;
     private bool gameStarted;
     [SerializeField] private GameObject startLevel;
+    [SerializeField] private TextMeshPro stat;
     [SerializeField] private List<GameObject> answerTexts;
     [SerializeField] private GameObject equipment;
     public GameObject axePrefab;
+    public GameObject database;
+    public void Start()
+    {
+        SetStat();
+    }
     public bool IsGameStarted()
     {
         return gameStarted;
@@ -22,6 +28,17 @@ public class LevelOneLogicScript : MonoBehaviour
         var currentEquipment = Instantiate(axePrefab, equipment.transform.position, equipment.transform.rotation);
         Destroy(equipment);
         equipment = currentEquipment;
+    }
+    private void SetStat()
+    {
+        if (database.GetComponent<DataBaseScript>().levelOneTotalEquations > 0)
+        {
+            stat.text = "Accuracy: " + ((database.GetComponent<DataBaseScript>().levelOneCorrectAnswer / database.GetComponent<DataBaseScript>().levelOneTotalEquations) * 100).ToString();
+        }
+        else
+        {
+            stat.text = "Check this Out";
+        }
     }
 
     public void StartGame()
@@ -46,10 +63,12 @@ public class LevelOneLogicScript : MonoBehaviour
             {
                 answerTexts[i].GetComponent<LevelOneTargerScript>().targetText.text = "";
                 answerTexts[i].GetComponent<LevelOneTargerScript>().isCorrectAnswer = false;
-                startLevel.SetActive(true);
             }
+            SetStat();
+            startLevel.SetActive(true);
             return;
         }
+        database.GetComponent<DataBaseScript>().levelOneTotalEquations++;
         var (equation, correctAnswer, answers) = MathGenerator.GenerateEquation(
             MathGenerator.Difficulty.Normal,
             numOfChoices: 3

@@ -92,7 +92,7 @@ class EquationGenerator
         options.AddRange(smallerNumbers);
         Shuffle(options);
 
-        question = "X > " + x.ToString();
+        question = "greater than " + x.ToString();
         for (int i = 0; i < options.Count; i++)
         {
             if (options[i] > x)
@@ -114,7 +114,7 @@ class EquationGenerator
         options.AddRange(smallerNumbers);
         options.AddRange(greaterNumbers);
         Shuffle(options);
-        question = "X < " + x.ToString();
+        question = "less than " + x.ToString();
         for (int i = 0; i < options.Count; i++)
         {
             if (options[i] < x)

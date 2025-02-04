@@ -1,18 +1,19 @@
 using UnityEngine;
 
-public class StartGameTwoScript : MonoBehaviour
+public class StartGameThreeScript : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("XROrigin"))
         {
+            Debug.Log("XR Origin entered StartLevel trigger!");
             Transform parent = transform.parent;
             if (parent != null)
             {
-                LevelSecondLogicScript levelOneLogicScript = parent.GetComponent<LevelSecondLogicScript>();
-                if (levelOneLogicScript != null)
+                LevelThreeLogicScript levelThreeLogicScript = parent.GetComponent<LevelThreeLogicScript>();
+                if (levelThreeLogicScript != null)
                 {
-                    levelOneLogicScript.StartGame();
+                    levelThreeLogicScript.StartGame();
                     gameObject.SetActive(false);
                 }
                 else

@@ -6,7 +6,6 @@ public class StartGameScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("XROrigin"))
         {
-            Debug.Log("XR Origin entered StartLevel trigger!");
             Transform parent = transform.parent;
             if (parent != null)
             {
