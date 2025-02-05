@@ -7,6 +7,7 @@ public class LevelOneLogicScript : MonoBehaviour
     public int rounds = 3;
     public int counter;
     [SerializeField] private TextMeshPro equationText;
+    [SerializeField] private TextMeshPro Round;
     private bool gameStarted;
     [SerializeField] private GameObject startLevel;
     [SerializeField] private TextMeshPro stat;
@@ -54,6 +55,14 @@ public class LevelOneLogicScript : MonoBehaviour
     public void SetEquation()
     {
         counter--;
+        if (counter == 0)
+        {
+            Round.text = "Round";
+        }
+        else
+        {
+            Round.text = $"{counter}/{rounds - 1}";
+        }
         if (counter <= 0)
         {
             equationText.text = "You won";

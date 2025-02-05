@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using static Unity.Collections.Unicode;
 
 public class LevelSecondLogicScript : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class LevelSecondLogicScript : MonoBehaviour
     [SerializeField] private TextMeshPro stat;
     [SerializeField] private GameObject startLevel;
     public GameObject database;
-
+    [SerializeField] private TextMeshPro Round;
     private void Start()
     {
         SetStat();
@@ -38,6 +39,14 @@ public class LevelSecondLogicScript : MonoBehaviour
     public void SetEquation()
     {
         counter--;
+        if (counter == 0)
+        {
+            Round.text = "Round";
+        }
+        else
+        {
+            Round.text = $"{counter}/{rounds - 1}";
+        }
         if (counter <= 0)
         {
             equationText.text = "You Won";

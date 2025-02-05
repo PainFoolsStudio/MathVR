@@ -10,6 +10,7 @@ public class LevelThreeLogicScript : MonoBehaviour
     [SerializeField] private GameObject startLevel;
     [SerializeField] private GameObject database;
     [SerializeField] private TextMeshPro equationText;
+    [SerializeField] private TextMeshPro Round;
     [SerializeField] private TextMeshPro stat;
     [SerializeField] private List<LevelThreeTargetScript> answerTexts;
 
@@ -41,6 +42,14 @@ public class LevelThreeLogicScript : MonoBehaviour
     public void SetEquation()
     {
         counter--;
+        if (counter == 0)
+        {
+            Round.text = "Round";
+        }
+        else
+        {
+            Round.text = $"{counter}/{rounds - 1}";
+        }
         for (int i = 0; i < answerTexts.Count; i++)
         {
             answerTexts[i].gameObject.SetActive(true);
