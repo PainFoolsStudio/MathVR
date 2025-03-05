@@ -846,7 +846,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8392157, g: 0.3647059, b: 1, a: 0.20392157}
+      maxColor: {r: 1, g: 0.88550174, b: 0, a: 0.20392157}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -20647,7 +20647,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8392157, g: 0.3647059, b: 1, a: 0.20392157}
+      maxColor: {r: 0, g: 0.5216656, b: 1, a: 0.20392157}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -51540,7 +51540,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.89004993, g: 0.5934051, b: 0.990566, a: 0.043137256}
+      maxColor: {r: 0, g: 0.3708868, b: 1, a: 0.043137256}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -67842,7 +67842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8761189020131363517, guid: eaf2847a40a38914fb7dca7b42137605, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.83851
+      value: 10.56
       objectReference: {fileID: 0}
     - target: {fileID: 8761189020131363517, guid: eaf2847a40a38914fb7dca7b42137605, type: 3}
       propertyPath: m_LocalPosition.y
@@ -67850,7 +67850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8761189020131363517, guid: eaf2847a40a38914fb7dca7b42137605, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.089091
+      value: 33.65
       objectReference: {fileID: 0}
     - target: {fileID: 8761189020131363517, guid: eaf2847a40a38914fb7dca7b42137605, type: 3}
       propertyPath: m_LocalRotation.w
@@ -80442,7 +80442,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8392157, g: 0.3647059, b: 1, a: 0.20392157}
+      maxColor: {r: 0, g: 0.5764303, b: 1, a: 0.20392157}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -92278,15 +92278,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3423388300971593625, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.36
       objectReference: {fileID: 0}
     - target: {fileID: 3423388300971593625, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.658
       objectReference: {fileID: 0}
     - target: {fileID: 3423388300971593625, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.485
       objectReference: {fileID: 0}
     - target: {fileID: 3423388300971593625, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -93197,7 +93197,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8392157, g: 0.3647059, b: 1, a: 0.20392157}
+      maxColor: {r: 1, g: 0.5067591, b: 0, a: 0.20392157}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -125199,7 +125199,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.89004993, g: 0.5934051, b: 0.990566, a: 0.043137256}
+      maxColor: {r: 0, g: 0.34961152, b: 1, a: 0.043137256}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -145619,7 +145619,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8392157, g: 0.3647059, b: 1, a: 0.20392157}
+      maxColor: {r: 0, g: 0.55093956, b: 1, a: 0.20392157}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -150539,7 +150539,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.89004993, g: 0.5934051, b: 0.990566, a: 0.043137256}
+      maxColor: {r: 1, g: 0.35940674, b: 0, a: 0.043137256}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -155523,7 +155523,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.89004993, g: 0.5934051, b: 0.990566, a: 0.043137256}
+      maxColor: {r: 0.764151, g: 0.43538928, b: 0, a: 0.043137256}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -160514,7 +160514,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.89004993, g: 0.5934051, b: 0.990566, a: 0.043137256}
+      maxColor: {r: 0, g: 0.3294528, b: 0.9339623, a: 0.043137256}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -165227,6 +165227,18 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3574362967237534933, guid: a2a060732547fe64581bb0cb3c2bdf1d, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574362967237534933, guid: a2a060732547fe64581bb0cb3c2bdf1d, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.374343
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574362967237534933, guid: a2a060732547fe64581bb0cb3c2bdf1d, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3650638188812647480, guid: a2a060732547fe64581bb0cb3c2bdf1d, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -165374,7 +165386,7 @@ MonoBehaviour:
   startLevel: {fileID: 1323917721}
   database: {fileID: 409233820016627205, guid: 12b4617e0221a98419fbdfafc818b851, type: 3}
   equationText: {fileID: 817121719}
-  Round: {fileID: 0}
+  Round: {fileID: 2098114597}
   stat: {fileID: 1248926930}
   answerTexts:
   - {fileID: 815344072}
@@ -179108,7 +179120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2503699648583718560, guid: f392c3cdacac2ea439aeb9f15adafe11, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
